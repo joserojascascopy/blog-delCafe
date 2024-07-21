@@ -46,6 +46,7 @@ h4 {
 
 .contenedor {
   max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -121,4 +122,10 @@ img {
 .navegacion__enlace {
   color: var(--blanco);
   font-size: 1.8rem;
+}
+
+.contenido-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 2rem;
 }
