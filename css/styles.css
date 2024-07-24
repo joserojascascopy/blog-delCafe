@@ -4,7 +4,8 @@
 
   --marron: #784d3c;
   --blanco: #ffff;
-  --negro: #0000;
+  --negro: #000000;
+  --grisClaro: #e1e1e1;
 }
 
 /* Globales */
@@ -14,7 +15,9 @@ html {
   font-size: 62.5%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -24,8 +27,12 @@ body {
   font-size: 1.6rem;
 }
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--fuenteHeading);
+  line-height: 1.2; /* No se mide en rem, px, etc */
 }
 
 h1 {
@@ -45,8 +52,9 @@ h4 {
 }
 
 .contenedor {
-  max-width: 120rem;
-  width: 95%;
+  /* max-width: 120rem;
+  width: 95%; */
+  width: min(95%, 120rem);
   margin: 0 auto;
 }
 
@@ -89,13 +97,17 @@ img {
   line-height: 1;
 }
 
+.barra {
+  padding-top: 2rem;
+}
+
 @media (min-width: 768px) {
   .barra {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-} 
+}
 
 .logo__nombre {
   color: var(--blanco);
@@ -113,10 +125,10 @@ img {
 }
 
 @media (min-width: 768px) {
-    .navegacion {
-      flex-direction: row;
-      gap: 2rem;
-    }
+  .navegacion {
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 .navegacion__enlace {
@@ -124,8 +136,86 @@ img {
   font-size: 1.8rem;
 }
 
-.contenido-principal {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: 2rem;
+/* Contenido Principal */
+
+@media (min-width: 768px) {
+  .contenido-principal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+  }
+}
+
+.entrada {
+  border-bottom: 1px solid var(--grisClaro);
+  margin-bottom: 2rem;
+}
+
+.entrada:last-of-type {
+  border-bottom: unset;
+  margin-bottom: unset;
+}
+
+.boton--entrada {
+  background-color: var(--negro);
+}
+
+.boton--informacion {
+  background-color: var(--marron);
+}
+
+.boton {
+  display: block;
+  font-family: var(--fuenteHeading);
+  text-transform: uppercase;
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    display: inline-block; /* A un elemento de tipo inline no se le puede dar margin y width */
+  }
+}
+
+/* Aside */
+
+.cursos {
+  list-style: none;
+}
+
+.widget-cursos {
+  border-bottom: 1px solid var(--grisClaro);
+  margin-bottom: 2rem;
+}
+
+.widget-cursos:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.widget-cursos__label {
+  font-family: var(--fuenteHeading);
+  font-weight: bold;
+}
+
+.widget-cursos__info {
+  font-weight: normal;
+}
+
+.widget-cursos__label,
+.widget-cursos__info {
+  font-size: 2rem;
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--negro);
+  padding-bottom: 2rem;
+  margin-top: 4rem;
 }
