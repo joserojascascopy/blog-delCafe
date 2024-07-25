@@ -32,7 +32,8 @@ h2,
 h3,
 h4 {
   font-family: var(--fuenteHeading);
-  line-height: 1.2; /* No se mide en rem, px, etc */
+  line-height: 1.2;
+  /* No se mide en rem, px, etc */
 }
 
 h1 {
@@ -178,7 +179,8 @@ img {
 
 @media (min-width: 768px) {
   .boton {
-    display: inline-block; /* A un elemento de tipo inline no se le puede dar margin y width */
+    display: inline-block;
+    /* A un elemento de tipo inline no se le puede dar margin y width */
   }
 }
 
@@ -222,7 +224,7 @@ img {
 
 /* Nosotros */
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .sobre-nosotros {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -265,11 +267,11 @@ img {
 }
 
 @media (min-width: 768px) {
-    .curso {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      column-gap: 2rem;
-    }
+  .curso {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+  }
 }
 
 .curso__label {
@@ -285,4 +287,20 @@ img {
 .curso__info,
 .curso__descripcion {
   font-size: 2rem;
+}
+
+/* Contacto */
+
+.contacto_bg {
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.formulario {
+  background-color: var(--blanco);
+  margin: -5rem auto 0 auto;
+  width: 95%;
+  padding: 5rem;
 }
